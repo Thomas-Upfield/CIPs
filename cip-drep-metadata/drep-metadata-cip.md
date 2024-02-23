@@ -79,6 +79,25 @@ There is an expressed community appetite to delegate to teams of individuals who
 - The team authoring this metadata MUST use this field for their profile name/ username.
 - The team authoring this metadata SHOULD attempt to make this field unique whilst also avoiding crass language.
 
+`bio`
+- Compulsory
+- A freeform text field.
+- This SHOULD NOT support markdown text styling.
+- This SHOULD be used to introduce the team and its USP.
+-- I.e. “We are a team of successful Project Catalyst builders with a broad array of interests and expertise, which makes us perfect...”
+
+`members`
+- Compulsory
+- The fields describing the individual details of each team member is nested inside this field. The nested fields follow the same format as the Registering as an Individual section below except with the addition of the `role` field described below and the removal `donotlist` field in the Registering as an Individual section (teams cannot choose to omit individual members without arousing suspicion).
+- Tooling MUST display the compulsory `name` and `identity` fields for each team member, all other fields are optional.
+
+`identity`
+- Compulsory
+- A link to a social media profile where the team must reference their DRep ID in their profile.
+- This will be used by people reviewing this team to prove and verify that the team described in the metadata is the same as the team who set up the social media profile.
+- Tooling providers SHOULD warn people that none of the information is verified by the tool and they should DYOR
+- Tooling providers making metadata SHOULD provide some information about why this is important.
+
 `picture`
 - Optional 
 - A base 64 encoded profile picture
@@ -89,13 +108,6 @@ There is an expressed community appetite to delegate to teams of individuals who
 - Optional
 - To tell people how votes will be decided by the team, e.g. "x of y votes" or "Chad votes on Treasury Withdrawals and Stephan votes on..."
 - If the team is following best proctice and using a native Plutus script then multisig rules will be on-chain anyway, and this field SHOULD be used to add context.
-
-`bio`
-- Compulsory
-- A freeform text field.
-- This SHOULD NOT support markdown text styling.
-- This SHOULD be used to introduce the team and its USP.
--- I.e. “We are a team of successful Project Catalyst builders with a broad array of interests and expertise, which makes us perfect...”
 
 `links`
 - Optional
@@ -111,17 +123,10 @@ There is an expressed community appetite to delegate to teams of individuals who
 - A true value means that the DRep does not want to show up in tooling that displays DReps. 
 -- I.e. they do not want to appear in GovTool’s DRep Explorer feature
 
-`members`
-- Compulsory
-- The fields describing the individual details of each team member is nested inside this field. The nested fields follow the same format as the Registering as an Individual section below except with the addition of the `role` field described below and the removal `donotlist` field in the Registering as an Individual section (teams cannot choose to omit individual members without arousing suspicion).
-- Tooling MUST display the compulsory `name` and `identity` fields for each team member, all other fields are optional.
-
 `role`
 - Optional
 - To describe the speciality of each individual team member e.g. "Constitutional Expert"
 - A very short freeform text field. Limited to 80 characters.
-
-
 
 ##### Registering as an individual
 
@@ -131,6 +136,20 @@ There is an expressed community appetite to delegate to teams of individuals who
 - This SHOULD NOT support markdown text styling.
 - Authors MUST use this field for their profile name/ username.
 - Authors SHOULD attempt to make this field unique whilst also avoiding crass language.
+
+`bio`
+- Compulsory
+- A freeform text field.
+- This SHOULD NOT support markdown text styling.
+- This SHOULD be used to introduce the individual.
+-- I.e. “I am such-and-such and I have this experience and these ideas...”
+
+`identity`
+- Compulsory
+- A link to a social media profile where the person must reference their DRep ID in their profile.
+- This will be used by people reviewing this DRep to prove and verify that the person described in the metadata is the same as the person who set up the social media profile.
+- Tooling providers SHOULD warn people that none of the information is verified by the tool and they should DYOR
+- Tooling providers making metadata SHOULD provide some information about why this is important.
 
 `picture`
 - Optional 
@@ -149,13 +168,6 @@ There is an expressed community appetite to delegate to teams of individuals who
 `qualifications`
 - Optional
 - A space to list the qualifications that the subject of this metadata has that are relevant to being a DRep
-
-`identity`
-- Compulsory
-- A link to a social media profile where the person must reference their DRep ID in their profile.
-- This will be used by people reviewing this DRep to prove and verify that the person described in the metadata is the same as the person who set up the social media profile.
-- Tooling providers SHOULD warn people that none of the information is verified by the tool and they should DYOR
-- Tooling providers making metadata SHOULD provide some information about why this is important.
 
 `links`
 - Optional
